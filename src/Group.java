@@ -1,18 +1,18 @@
 public class Group extends Shape {
-    public Shape[] sa;
-    private int xcoor = 0;
-    private int ycoor = 0;
-    private int h = 0;
-    private int w = 0;
+    private Shape[] sa;
+    private int xcoor;
+    private int ycoor;
+    private int h;
+    private int w;
 
     public Group(Shape[] shapes) {
         sa = shapes;
 
-        for (int i = 0; i < sa.length; i++) {
-            xcoor += sa[i].getX();
-            ycoor += sa[i].getY();
-            h += sa[i].getHeight();
-            w += sa[i].getWidth();
+        for (Shape aSa : sa) {
+            xcoor += aSa.getX();
+            ycoor += aSa.getY();
+            h += aSa.getHeight();
+            w += aSa.getWidth();
         }
         xcoor /= sa.length;
         ycoor /= sa.length;
@@ -22,17 +22,17 @@ public class Group extends Shape {
 
     @Override
     public void drawOn(DrawingBoard db) {
-        for (int i = 0; i < sa.length; i++) {
-            sa[i].drawOn(db);
+        for (Shape aSa : sa) {
+            aSa.drawOn(db);
         }
     }
 
 
     public boolean within(DrawingBoard db) {
         boolean g = true;
-        for (int i = 0; i < sa.length; i++) {
+        for (Shape aSa : sa) {
 
-            if (sa[i].within(db) == false)
+            if (!aSa.within(db))
                 g = false;
         }
         return g;
@@ -62,10 +62,7 @@ public class Group extends Shape {
 
     @Override
     public String[] getBoundingBox() {
-        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-
-        return bounds;
-
+        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
     }
 
 
