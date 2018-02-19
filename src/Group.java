@@ -5,8 +5,8 @@ public class Group extends Shape {
     private int h = 0;
     private int w = 0;
 
-    public Group(Shape[] sar) {
-        sa = sar;
+    public Group(Shape[] shapes) {
+        sa = shapes;
 
         for (int i = 0; i < sa.length; i++) {
             xcor += sa[i].getX(sa[i]);
@@ -14,10 +14,10 @@ public class Group extends Shape {
             h += sa[i].getHeight(sa[i]);
             w += sa[i].getWidth(sa[i]);
         }
-        xcor = xcor / sa.length;
-        ycor = ycor / sa.length;
-        h = h / sa.length;
-        w = w / sa.length;
+        xcor /= sa.length;
+        ycor /= sa.length;
+        h /= sa.length;
+        w /= sa.length;
     }
 
     @Override
