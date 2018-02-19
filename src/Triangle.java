@@ -91,27 +91,27 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public int getX(Shape shape) {
+    public int getX() {
         return xcor;
     }
 
-    public int getY(Shape shape) {
+    public int getY() {
         return ycor;
     }
 
     @Override
-    public String[] getBoundingBox(Shape sh) {
+    public String[] getBoundingBox() {
 
         String[] bounds = {Integer.toString(ycor - w / 2), Integer.toString(xcor - h / 2), Integer.toString(ycor + w / 2), Integer.toString(xcor + h / 2)};
 
         return bounds;
     }
 
-    public int getHeight(Shape shape) {
+    public int getHeight() {
         return h;
     }
 
-    public int getWidth(Shape shape) {
+    public int getWidth() {
         return h;
     }
 

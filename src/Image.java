@@ -1,3 +1,4 @@
+
 public class Image extends Colors{
 
     public static void main(String[] args) {
@@ -16,6 +17,5 @@ public class Image extends Colors{
         Group car = new Group(s);
         car.drawOn(space);
         space.show();
-
     }
 }
