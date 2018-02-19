@@ -67,8 +67,6 @@ public class Triangle extends Shape {
                     }
                 }
                 break;
-            default:
-                System.out.println("Not A Valid Rotation");
         }
     }
 
