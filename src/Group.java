@@ -1,7 +1,7 @@
 public class Group extends Shape {
     public Shape[] sa;
-    private int xcor = 0;
-    private int ycor = 0;
+    private int xcoor = 0;
+    private int ycoor = 0;
     private int h = 0;
     private int w = 0;
 
@@ -9,13 +9,13 @@ public class Group extends Shape {
         sa = shapes;
 
         for (int i = 0; i < sa.length; i++) {
-            xcor += sa[i].getX();
-            ycor += sa[i].getY();
+            xcoor += sa[i].getX();
+            ycoor += sa[i].getY();
             h += sa[i].getHeight();
             w += sa[i].getWidth();
         }
-        xcor /= sa.length;
-        ycor /= sa.length;
+        xcoor /= sa.length;
+        ycoor /= sa.length;
         h /= sa.length;
         w /= sa.length;
     }
@@ -40,12 +40,12 @@ public class Group extends Shape {
 
     @Override
     public int getX() {
-        return xcor;
+        return xcoor;
     }
 
     @Override
     public int getY() {
-        return ycor;
+        return ycoor;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Group extends Shape {
 
     @Override
     public String[] getBoundingBox() {
-        String[] bounds = {Integer.toString(ycor - w / 2), Integer.toString(xcor - h / 2), Integer.toString(ycor + w / 2), Integer.toString(xcor + h / 2)};
+        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
 
         return bounds;
 

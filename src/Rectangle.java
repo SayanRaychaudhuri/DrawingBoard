@@ -2,8 +2,8 @@ public class Rectangle extends Shape {
     private int h;
     private int w;
     private boolean in;
-    private int xcor;
-    private int ycor;
+    private int xcoor;
+    private int ycoor;
 
     private Drawing d;
     private int col;
@@ -12,16 +12,16 @@ public class Rectangle extends Shape {
         h = height;
         w = width;
         in = true;
-        xcor = x;
-        ycor = y;
+        xcoor = x;
+        ycoor = y;
 
         d = draw;
         col = color;
     }
 
     public void drawOn(DrawingBoard db) {
-        for (int j = xcor - h / 2; j <= xcor + h / 2; j++)
-            for (int i = ycor - w / 2; i <= ycor + w / 2; i++)
+        for (int j = xcoor - h / 2; j <= xcoor + h / 2; j++)
+            for (int i = ycoor - w / 2; i <= ycoor + w / 2; i++)
                 db.getImageArray()[i][j] = col;
 
 
@@ -29,7 +29,7 @@ public class Rectangle extends Shape {
 
     @Override
     public boolean within(DrawingBoard db) {
-        if ((xcor - h / 2) < 0 || xcor + h / 2 > db.getWidth() || ycor - w / 2 < 0 || ycor + w / 2 > db.getHeight()) {
+        if ((xcoor - h / 2) < 0 || xcoor + h / 2 > db.getWidth() || ycoor - w / 2 < 0 || ycoor + w / 2 > db.getHeight()) {
             in = false;
         }
         return in;
@@ -37,17 +37,17 @@ public class Rectangle extends Shape {
 
     @Override
     public int getX() {
-        return xcor;
+        return xcoor;
     }
 
     public int getY() {
-        return ycor;
+        return ycoor;
     }
 
     @Override
     public String[] getBoundingBox() {
 
-        String[] bounds = {Integer.toString(ycor - w / 2), Integer.toString(xcor - h / 2), Integer.toString(ycor + w / 2), Integer.toString(xcor + h / 2)};
+        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
 
         return bounds;
     }

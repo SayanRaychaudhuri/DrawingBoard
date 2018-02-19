@@ -7,8 +7,8 @@ public class Triangle extends Shape {
     private int x2;
     private int y1;
     private int y2;
-    private int xcor;
-    private int ycor;
+    private int xcoor;
+    private int ycoor;
     private Orientation rotate;
     private int[][] pixels;
 
@@ -28,8 +28,8 @@ public class Triangle extends Shape {
         this.y1 = y1;
         this.y2 = y2;
         col = color;
-        xcor = x1 + (w / 2);
-        ycor = y2 - (h / 2);
+        xcoor = x1 + (w / 2);
+        ycoor = y2 - (h / 2);
         this.rotate = rotate;
         pixels = new int[w][h];
 
@@ -77,13 +77,13 @@ public class Triangle extends Shape {
 
         double m = ((double) (y2 - y1)) / (x2 - x1);    // slope
 
-        int y = (int) (y1 + m * (x - x1) + 0.5);
+        int y = (int) (y1 + m * (x - x1));
         return y;
     }
 
     @Override
     public boolean within(DrawingBoard db) {
-        if ((xcor - h / 2) < 0 || xcor + h / 2 > db.getWidth() || ycor - w / 2 < 0 || ycor + w / 2 > db.getHeight()) {
+        if ((xcoor - h / 2) < 0 || xcoor + h / 2 > db.getWidth() || ycoor - w / 2 < 0 || ycoor + w / 2 > db.getHeight()) {
             in = false;
 
         }
@@ -93,17 +93,17 @@ public class Triangle extends Shape {
 
     @Override
     public int getX() {
-        return xcor;
+        return xcoor;
     }
 
     public int getY() {
-        return ycor;
+        return ycoor;
     }
 
     @Override
     public String[] getBoundingBox() {
 
-        String[] bounds = {Integer.toString(ycor - w / 2), Integer.toString(xcor - h / 2), Integer.toString(ycor + w / 2), Integer.toString(xcor + h / 2)};
+        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
 
         return bounds;
     }
