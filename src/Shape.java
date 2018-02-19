@@ -1,4 +1,6 @@
 public abstract class Shape implements Drawable {
+    private boolean in;
+    
     public abstract int getX();
 
     public abstract int getY();

@@ -38,34 +38,37 @@ public class Triangle extends Shape {
 
     @Override
     public void drawOn(DrawingBoard db) {
-        if (rotate == Orientation.DOWNLEFT) {
-            for (int i = x1; i < x2; i++) {
-                for (int j = y1; j < yOnLine(i, x1, y1, x2, y2); j++) {
-                    db.getImageArray()[j][i] = col;
+        switch (rotate){
+            case DOWNLEFT:
+                for (int i = x1; i < x2; i++) {
+                    for (int j = y1; j < yOnLine(i, x1, y1, x2, y2); j++) {
+                        db.getImageArray()[j][i] = col;
+                    }
                 }
-            }
-        } else if (rotate == Orientation.DOWNRIGHT) {
-            for (int i = x1; i < x2; i++) {
-                for (int j = y1; j < yOnLine(i, x1, y2, x2, y1); j++) {
-                    db.getImageArray()[j][i] = col;
+                break;
+            case DOWNRIGHT:
+                for (int i = x1; i < x2; i++) {
+                    for (int j = y1; j < yOnLine(i, x1, y2, x2, y1); j++) {
+                        db.getImageArray()[j][i] = col;
+                    }
                 }
-            }
-        } else if (rotate == Orientation.UPLEFT) {
-
-            for (int i = x1; i < x2; i++) {
-                for (int j = y2; j > yOnLine(i, x1, y2, x2, y1); j--) {
-                    db.getImageArray()[j][i] = col;
+                break;
+            case UPLEFT:
+                for (int i = x1; i < x2; i++) {
+                    for (int j = y2; j > yOnLine(i, x1, y2, x2, y1); j--) {
+                        db.getImageArray()[j][i] = col;
+                    }
                 }
-            }
-
-        } else if (rotate == Orientation.UPRIGHT) {
-            for (int i = x1; i < x2; i++) {
-                for (int j = y2; j > yOnLine(i, x1, y1, x2, y2); j--) {
-                    db.getImageArray()[j][i] = col;
+                break;
+            case UPRIGHT:
+                for (int i = x1; i < x2; i++) {
+                    for (int j = y2; j > yOnLine(i, x1, y1, x2, y2); j--) {
+                        db.getImageArray()[j][i] = col;
+                    }
                 }
-            }
-        } else {
-            System.out.println("Not A Valid Rotation");
+                break;
+            default:
+                System.out.println("Not A Valid Rotation");
         }
     }
 
