@@ -14,6 +14,6 @@ public abstract class Shape implements Drawable {
     public abstract String[] getBoundingBox();
 
     public void printBoundBox() {
-        System.out.println(getBoundingBox()[1] + "," + getBoundingBox()[0] + "  These are the coordinates for the top left corner\n" + getBoundingBox()[3] + "," + getBoundingBox()[2] + "  These are the coordinates for the bottom right corner\n");
+        System.out.println("These are the coordinates of the top left corner: " + getBoundingBox()[1] + "," + getBoundingBox()[0] + "\nThese are the coordinates of the bottom right corner: " + getBoundingBox()[3] + "," + getBoundingBox()[2]);
     }
 }

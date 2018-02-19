@@ -17,7 +17,7 @@ public class Drawing extends DrawingBoard {
     }
 
     public void add(Shape thing, Drawing db) {
-        if (thing.within(db) == false) {
+        if (!thing.within(db)) {
             System.out.println("Shape is outside the drawing");
         } else {
             thing.drawOn(db);

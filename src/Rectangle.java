@@ -5,17 +5,14 @@ public class Rectangle extends Shape {
     private int xcoor;
     private int ycoor;
 
-    private Drawing d;
     private int col;
 
-    public Rectangle(int x, int y, int height, int width, Drawing draw, int color) {
+    public Rectangle(int x, int y, int height, int width, int color) {
         h = height;
         w = width;
         in = true;
         xcoor = x;
         ycoor = y;
-
-        d = draw;
         col = color;
     }
 
@@ -47,9 +44,7 @@ public class Rectangle extends Shape {
     @Override
     public String[] getBoundingBox() {
 
-        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-
-        return bounds;
+        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
     }
 
     public int getHeight() {

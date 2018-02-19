@@ -10,7 +10,7 @@ public class LineSegment extends Shape {
     private int xcoor;
     private int ycoor;
 
-    public LineSegment(int x1, int y1, int x2, int y2, Drawing draw, int color) {
+    public LineSegment(int x1, int y1, int x2, int y2, int color) {
         h = Math.abs(y2 - y1);
         w = Math.abs(x2 - x1);
         in = true;
@@ -66,9 +66,7 @@ public class LineSegment extends Shape {
     @Override
     public String[] getBoundingBox() {
 
-        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-
-        return bounds;
+        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
     }
 
     @Override

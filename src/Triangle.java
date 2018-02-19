@@ -10,7 +10,6 @@ public class Triangle extends Shape {
     private int xcoor;
     private int ycoor;
     private Orientation rotate;
-    private int[][] pixels;
 
     public enum Orientation {
         DOWNLEFT,
@@ -19,7 +18,7 @@ public class Triangle extends Shape {
         UPRIGHT
     }
 
-    public Triangle(int x1, int y1, int x2, int y2, Drawing draw, int color, Orientation rotate) {
+    public Triangle(int x1, int y1, int x2, int y2, int color, Orientation rotate) {
         h = Math.abs(y2 - y1);
         w = Math.abs(x2 - x1);
         in = true;
@@ -31,7 +30,6 @@ public class Triangle extends Shape {
         xcoor = x1 + (w / 2);
         ycoor = y2 - (h / 2);
         this.rotate = rotate;
-        pixels = new int[w][h];
 
     }
 
@@ -77,8 +75,7 @@ public class Triangle extends Shape {
 
         double m = ((double) (y2 - y1)) / (x2 - x1);    // slope
 
-        int y = (int) (y1 + m * (x - x1));
-        return y;
+        return (int) (y1 + m * (x - x1));
     }
 
     @Override
@@ -103,9 +100,7 @@ public class Triangle extends Shape {
     @Override
     public String[] getBoundingBox() {
 
-        String[] bounds = {Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-
-        return bounds;
+        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
     }
 
     public int getHeight() {
