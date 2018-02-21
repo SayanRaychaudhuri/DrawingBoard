@@ -10,7 +10,7 @@ public class Tester {
         space.add(new Rectangle(700, 460, 100, 100, Colors.BLACK));
         space.add(new Rectangle(400, 460, 70, 70, Colors.GRAY));
         space.add(new Rectangle(700, 460, 70, 70, Colors.GRAY));
-        space.show();
+        space.drawOn();
         
     }
 }
