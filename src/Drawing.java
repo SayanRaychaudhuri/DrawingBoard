@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Drawing extends DrawingBoard implements Drawable{
+public class Drawing extends DrawingBoard {
     ArrayList<Drawable> drawables = new ArrayList<>();
 
     public Drawing(int width, int height) {
