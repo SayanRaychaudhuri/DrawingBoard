@@ -15,16 +15,14 @@ public class Drawing extends DrawingBoard implements Drawable{
         drawables.add(drawable);
     }
 
-    @Override
-    public void drawOn(DrawingBoard db) {
-        for (Drawable aDrawable : drawables){
-            aDrawable.drawOn(db);
-        }
-        super.show();
-    }
-
-    @Override
-    public boolean within(DrawingBoard db) {
-        return false;
+    public void drawOn() {
+            for (Drawable aDrawable : drawables) {
+                if (aDrawable.within(this)) {
+                    aDrawable.drawOn(this);
+                } else {
+                    throw new IllegalArgumentException("Out of bounds");
+                }
+            }
+            super.show();
     }
 }
