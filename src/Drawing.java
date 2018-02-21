@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Drawing extends DrawingBoard {
+public class Drawing extends DrawingBoard implements Drawable{
     ArrayList<Drawable> drawables = new ArrayList<>();
 
     public Drawing(int width, int height) {
@@ -15,10 +15,16 @@ public class Drawing extends DrawingBoard {
         drawables.add(drawable);
     }
 
-    public void show(){
+    @Override
+    public void drawOn(DrawingBoard db) {
         for (Drawable aDrawable : drawables){
-            aDrawable.drawOn(this);
+            aDrawable.drawOn(db);
         }
         super.show();
+    }
+
+    @Override
+    public boolean within(DrawingBoard db) {
+        return false;
     }
 }
