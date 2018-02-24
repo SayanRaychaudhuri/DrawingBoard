@@ -1,14 +1,6 @@
 public class LineSegment extends Shape {
-    private int h;
-    private int w;
+    private int h, w, col, x1, x2, y1, y2, xcoor, ycoor;
     private boolean in;
-    private int col;
-    private int x1;
-    private int x2;
-    private int y1;
-    private int y2;
-    private int xcoor;
-    private int ycoor;
 
     public LineSegment(int x1, int y1, int x2, int y2, int color) {
         h = Math.abs(y2 - y1);
@@ -41,8 +33,7 @@ public class LineSegment extends Shape {
 
         double m = ((double) (y2 - y1)) / (x2 - x1);    // slope
 
-        int y = (int) (y1 + m * (x - x1));
-        return y;
+        return (int) (y1 + m * (x - x1));
     }
 
     @Override

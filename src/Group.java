@@ -1,9 +1,6 @@
 public class Group extends Shape {
     private Shape[] sa;
-    private int xcoor;
-    private int ycoor;
-    private int h;
-    private int w;
+    private int xcoor, ycoor, h, w;
 
     public Group(Shape[] shapes) {
         sa = shapes;
@@ -31,7 +28,6 @@ public class Group extends Shape {
     public boolean within(DrawingBoard db) {
         boolean g = true;
         for (Shape aSa : sa) {
-
             if (!aSa.within(db))
                 g = false;
         }

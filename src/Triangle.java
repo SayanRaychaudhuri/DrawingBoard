@@ -1,14 +1,6 @@
 public class Triangle extends Shape {
-    private int h;
-    private int w;
+    private int h, w, col, x1, x2, y1, y2, xcoor, ycoor;
     private boolean in;
-    private int col;
-    private int x1;
-    private int x2;
-    private int y1;
-    private int y2;
-    private int xcoor;
-    private int ycoor;
     private Orientation rotate;
 
     public enum Orientation {

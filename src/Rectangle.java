@@ -1,9 +1,6 @@
 public class Rectangle extends Shape {
-    private int h;
-    private int w;
+    private int h, w, xcoor, ycoor;
     private boolean in;
-    private int xcoor;
-    private int ycoor;
 
     private int col;
 
