@@ -1,24 +1,23 @@
-public class Group{
-    private Drawable[] sa;
-    private int xcoor, ycoor, h, w;
+public class Group extends Drawable{
+    private Drawable[] drawables;
 
     public Group(Drawable[] drawables) {
-        sa = drawables;
-
-        for (Drawable aSa : sa) {
-            xcoor += aSa.getX();
-            ycoor += aSa.getY();
-            h += aSa.getHeight();
-            w += aSa.getWidth();
+        super(0,0,0,0);
+        this.drawables = drawables;
+        for (Drawable D : drawables) {
+            xcoor += D.getX();
+            ycoor += D.getY();
+            h += D.getHeight();
+            w += D.getWidth();
         }
-        xcoor /= sa.length;
-        ycoor /= sa.length;
-        h /= sa.length;
-        w /= sa.length;
+        xcoor /= drawables.length;
+        ycoor /= drawables.length;
+        h /= drawables.length;
+        w /= drawables.length;
     }
 
     public void drawOn(DrawingBoard db) {
-        for (Drawable aSa : sa) {
+        for (Drawable aSa : drawables) {
             aSa.drawOn(db);
         }
     }
@@ -26,11 +25,10 @@ public class Group{
 
     public boolean within(DrawingBoard db) {
         boolean g = true;
-        for (Drawable aSa : sa) {
+        for (Drawable aSa : drawables) {
             if (!aSa.within(db))
                 g = false;
         }
         return g;
     }
-
 }

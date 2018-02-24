@@ -1,6 +1,6 @@
 public abstract class Drawable {
-    private int xcoor, ycoor, h, w;
-    private boolean in = true;
+    public int xcoor, ycoor, h, w;
+    public boolean in = true;
 
     public Drawable(int h, int w, int xcoor, int ycoor){
         this.h = h;
