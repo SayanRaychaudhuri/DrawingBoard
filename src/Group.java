@@ -17,16 +17,16 @@ public class Group extends Drawable{
     }
 
     public void drawOn(DrawingBoard db) {
-        for (Drawable aSa : drawables) {
-            aSa.drawOn(db);
+        for (Drawable D : drawables) {
+            D.drawOn(db);
         }
     }
 
 
     public boolean within(DrawingBoard db) {
         boolean g = true;
-        for (Drawable aSa : drawables) {
-            if (!aSa.within(db))
+        for (Drawable D : drawables) {
+            if (!D.within(db))
                 g = false;
         }
         return g;

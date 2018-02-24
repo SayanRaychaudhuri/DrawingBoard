@@ -25,7 +25,7 @@ public abstract class Drawable {
         return w;
     }
 
-    public static int yOnLine(int x, int x1, int y1, int x2, int y2) {
+    public int yOnLine(int x, int x1, int y1, int x2, int y2) {
         if (y2 == y1)
             return x1;
 
