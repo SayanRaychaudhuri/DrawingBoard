@@ -1,11 +1,11 @@
-public class Group extends Shape {
-    private Shape[] sa;
+public class Group{
+    private Drawable[] sa;
     private int xcoor, ycoor, h, w;
 
-    public Group(Shape[] shapes) {
-        sa = shapes;
+    public Group(Drawable[] drawables) {
+        sa = drawables;
 
-        for (Shape aSa : sa) {
+        for (Drawable aSa : sa) {
             xcoor += aSa.getX();
             ycoor += aSa.getY();
             h += aSa.getHeight();
@@ -17,9 +17,8 @@ public class Group extends Shape {
         w /= sa.length;
     }
 
-    @Override
     public void drawOn(DrawingBoard db) {
-        for (Shape aSa : sa) {
+        for (Drawable aSa : sa) {
             aSa.drawOn(db);
         }
     }
@@ -27,39 +26,11 @@ public class Group extends Shape {
 
     public boolean within(DrawingBoard db) {
         boolean g = true;
-        for (Shape aSa : sa) {
+        for (Drawable aSa : sa) {
             if (!aSa.within(db))
                 g = false;
         }
         return g;
     }
-
-    @Override
-    public int getX() {
-        return xcoor;
-    }
-
-    @Override
-    public int getY() {
-        return ycoor;
-    }
-
-    @Override
-    public int getHeight() {
-
-        return h;
-    }
-
-    @Override
-    public int getWidth() {
-
-        return w;
-    }
-
-    @Override
-    public String[] getBoundingBox() {
-        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-    }
-
 
 }

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Tester {
     public static void main(String[] args) {
         Drawing space = new Drawing("C:\\Users\\Nupur\\IdeaProjects\\DrawingBoard\\src\\EdgeOfSpace.JPG");
@@ -11,6 +12,5 @@ public class Tester {
         space.add(new Rectangle(400, 460, 70, 70, Colors.GRAY));
         space.add(new Rectangle(700, 460, 70, 70, Colors.GRAY));
         space.drawOn();
-        
     }
 }

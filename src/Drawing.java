@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Drawing extends DrawingBoard {
-    ArrayList<Shape> shapes = new ArrayList<>();
+    ArrayList<Drawable> drawables = new ArrayList<>();
 
     public Drawing(int width, int height) {
         super(width, height);
@@ -11,14 +11,14 @@ public class Drawing extends DrawingBoard {
         super(filePath);
     }
 
-    public void add(Shape shape){
-        shapes.add(shape);
+    public void add(Drawable drawable){
+        drawables.add(drawable);
     }
 
     public void drawOn() {
-            for (Shape shape : shapes) {
-                if (shape.within(this)) {
-                    shape.drawOn(this);
+            for (Drawable drawable : drawables) {
+                if (drawable.within(this)) {
+                    drawable.drawOn(this);
                 } else {
                     throw new IllegalArgumentException("Out of bounds");
                 }

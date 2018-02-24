@@ -1,6 +1,5 @@
-public class Triangle extends Shape {
+public class Triangle extends Drawable {
     private int h, w, col, x1, x2, y1, y2, xcoor, ycoor;
-    private boolean in;
     private Orientation rotate;
 
     public enum Orientation {
@@ -11,9 +10,9 @@ public class Triangle extends Shape {
     }
 
     public Triangle(int x1, int y1, int x2, int y2, int color, Orientation rotate) {
+        super(Math.abs(y2-y1), Math.abs(x2-x1), x1+Math.abs(x2-x1)/2, y2-Math.abs(y2 - y1)/2);
         h = Math.abs(y2 - y1);
         w = Math.abs(x2 - x1);
-        in = true;
         this.x1 = x1;
         this.x2 = x2;
         this.y1 = y1;
@@ -59,49 +58,5 @@ public class Triangle extends Shape {
                 break;
         }
     }
-
-
-    public static int yOnLine(int x, int x1, int y1, int x2, int y2) {
-        if (y2 == y1)    // horizontal line, slope == 0
-            return x1;    // actually all x values lie on the line
-
-        double m = ((double) (y2 - y1)) / (x2 - x1);    // slope
-
-        return (int) (y1 + m * (x - x1));
-    }
-
-    @Override
-    public boolean within(DrawingBoard db) {
-        if ((xcoor - h / 2) < 0 || xcoor + h / 2 > db.getWidth() || ycoor - w / 2 < 0 || ycoor + w / 2 > db.getHeight()) {
-            in = false;
-
-        }
-        return in;
-
-    }
-
-    @Override
-    public int getX() {
-        return xcoor;
-    }
-
-    public int getY() {
-        return ycoor;
-    }
-
-    @Override
-    public String[] getBoundingBox() {
-
-        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-    }
-
-    public int getHeight() {
-        return h;
-    }
-
-    public int getWidth() {
-        return h;
-    }
-
 
 }
