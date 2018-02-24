@@ -1,6 +1,6 @@
 public class Tester {
     public static void main(String[] args) {
-        Drawing space = new Drawing("C:\\Users\\Programming 1\\IdeaProjects\\DrawingBoard\\src\\EdgeOfSpace.JPG");
+        Drawing space = new Drawing("C:\\Users\\Nupur\\IdeaProjects\\DrawingBoard\\src\\EdgeOfSpace.JPG");
         space.add(new Rectangle(550, 400, 600, 120, Colors.RED));
         space.add(new Triangle(250, 300, 450, 400, Colors.RED, Triangle.Orientation.UPRIGHT));
         space.add(new LineSegment(700, 250, 850, 340, Colors.RED));

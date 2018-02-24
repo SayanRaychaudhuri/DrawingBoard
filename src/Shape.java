@@ -1,6 +1,4 @@
-public abstract class Shape implements Drawable {
-    private boolean in;
-    
+public abstract class Shape {
     public abstract int getX();
 
     public abstract int getY();
@@ -8,6 +6,10 @@ public abstract class Shape implements Drawable {
     public abstract int getHeight();
 
     public abstract int getWidth();
+
+    public abstract void drawOn(DrawingBoard db);
+
+    public abstract boolean within(DrawingBoard db);
 
     //bounding box will return a 4 number integer array with the first two numbers being the
     //bottom left coordinates, and the second two being the top right coordinates
