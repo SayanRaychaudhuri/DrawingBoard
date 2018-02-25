@@ -9,6 +9,33 @@ public abstract class Drawable {
         this.ycoor = ycoor;
     }
 
+    public int yOnLine(int x, int x1, int y1, int x2, int y2) {
+        if (y2 == y1)
+            return x1;
+
+        double m = ((double) (y2 - y1)) / (x2 - x1);
+
+        return (int) (y1 + m * (x - x1));
+    }
+
+    public int distance(int x1, int y1, int x2, int y2) {
+        return (int)Math.sqrt((Math.pow((x2-x1),2)+Math.pow((y2-y1),2)));
+    }
+    public boolean within(DrawingBoard db) {
+        if ((xcoor - h / 2) < 0 || xcoor + h / 2 > db.getWidth() || ycoor - w / 2 < 0 || ycoor + w / 2 > db.getHeight()) {
+            in = false;
+        }
+        return in;
+    }
+
+    public String[] getBoundingBox(){
+        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
+    }
+
+    public void printBoundBox() {
+        System.out.println("These are the coordinates of the top left corner: " + getBoundingBox()[1] + "," + getBoundingBox()[0] + "\nThese are the coordinates of the bottom right corner: " + getBoundingBox()[3] + "," + getBoundingBox()[2]);
+    }
+
     public int getX(){
         return xcoor;
     }
@@ -23,30 +50,6 @@ public abstract class Drawable {
 
     public int getWidth(){
         return w;
-    }
-
-    public int yOnLine(int x, int x1, int y1, int x2, int y2) {
-        if (y2 == y1)
-            return x1;
-
-        double m = ((double) (y2 - y1)) / (x2 - x1);
-
-        return (int) (y1 + m * (x - x1));
-    }
-
-    public boolean within(DrawingBoard db) {
-        if ((xcoor - h / 2) < 0 || xcoor + h / 2 > db.getWidth() || ycoor - w / 2 < 0 || ycoor + w / 2 > db.getHeight()) {
-            in = false;
-        }
-        return in;
-    }
-
-    public String[] getBoundingBox(){
-        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-    }
-
-    public void printBoundBox() {
-        System.out.println("These are the coordinates of the top left corner: " + getBoundingBox()[1] + "," + getBoundingBox()[0] + "\nThese are the coordinates of the bottom right corner: " + getBoundingBox()[3] + "," + getBoundingBox()[2]);
     }
 
     public abstract void drawOn(DrawingBoard db);

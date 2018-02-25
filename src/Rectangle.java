@@ -3,10 +3,10 @@ public class Rectangle extends Drawable {
 
     public Rectangle(int x, int y, int height, int width, int color) {
         super(height, width, x, y);
-        h = height;
-        w = width;
         xcoor = x;
         ycoor = y;
+        h = height;
+        w = width;
         col = color;
     }
 

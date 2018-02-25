@@ -3,9 +3,9 @@ public class Square extends Rectangle{
 
     public Square(int x, int y, int sidelength, int color) {
         super(x, y, sidelength, sidelength, color);
-        s = sidelength;
         xcoor = x;
         ycoor = y;
+        s = sidelength;
         col = color;
     }
 
