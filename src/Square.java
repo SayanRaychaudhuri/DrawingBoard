@@ -1,8 +1,8 @@
-public class Square extends Rectangle{
+public class Square extends Drawable{
     private int s, xcoor, ycoor, col;
 
     public Square(int x, int y, int sidelength, int color) {
-        super(x, y, sidelength, sidelength, color);
+        super(sidelength, sidelength, x, y);
         xcoor = x;
         ycoor = y;
         s = sidelength;

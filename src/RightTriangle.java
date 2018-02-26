@@ -9,7 +9,7 @@ public class RightTriangle extends Drawable {
         UPRIGHT
     }
 
-    public RightTriangle(int x1, int y1, int x2, int y2, int color, Orientation rotate) {
+    public RightTriangle(int x1, int y1, int x2, int y2, int color, Orientation rotate) { // Points that make the hypotenuse
         super(Math.abs(y2-y1), Math.abs(x2-x1), x1+Math.abs(x2-x1)/2, y2-Math.abs(y2 - y1)/2);
         h = Math.abs(y2 - y1);
         w = Math.abs(x2 - x1);
