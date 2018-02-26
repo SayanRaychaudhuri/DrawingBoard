@@ -28,14 +28,6 @@ public abstract class Drawable {
         return in;
     }
 
-    public String[] getBoundingBox(){
-        return new String[]{Integer.toString(ycoor - w / 2), Integer.toString(xcoor - h / 2), Integer.toString(ycoor + w / 2), Integer.toString(xcoor + h / 2)};
-    }
-
-    public void printBoundBox() {
-        System.out.println("These are the coordinates of the top left corner: " + getBoundingBox()[1] + "," + getBoundingBox()[0] + "\nThese are the coordinates of the bottom right corner: " + getBoundingBox()[3] + "," + getBoundingBox()[2]);
-    }
-
     public int getX(){
         return xcoor;
     }

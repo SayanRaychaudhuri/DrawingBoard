@@ -16,10 +16,8 @@ public class LineSegment extends Drawable {
 
     @Override
     public void drawOn(DrawingBoard db) {
-
         for (int j = x1; j <= x2; j++) {
             int i = yOnLine(j, x1, y1, x2, y2);
-
             db.getImageArray()[i][j] = col;
 
         }

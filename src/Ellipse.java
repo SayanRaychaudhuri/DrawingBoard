@@ -15,14 +15,14 @@ public class Ellipse extends Drawable {
 
     public void drawOn(DrawingBoard db) {
         if (a > b) {
-            for (int j = xcoor - 2 * a; j <= xcoor + 2 * a; j++)
-                for (int i = ycoor - 2 * b; i <= ycoor + 2 * b; i++)
+            for (int j = xcoor - a; j <= xcoor + a; j++)
+                for (int i = ycoor - b; i <= ycoor + b; i++)
                     if (distance(j, i, f1Xcoor, ycoor) + distance(j, i, f2Xcoor, ycoor) <= 2 * a) {
                         db.getImageArray()[i][j] = col;
                     }
         } else {
-            for (int j = xcoor - 2 * b; j <= xcoor + 2 * b; j++)
-                for (int i = ycoor - 2 * a; i <= ycoor + 2 * a; i++)
+            for (int j = xcoor - b; j <= xcoor + b; j++)
+                for (int i = ycoor - a; i <= ycoor + a; i++)
                     if (distance(j, i, f1Xcoor, ycoor) + distance(j, i, f2Xcoor, ycoor) <= 2 * b) {
                         db.getImageArray()[j][i] = col;
                     }

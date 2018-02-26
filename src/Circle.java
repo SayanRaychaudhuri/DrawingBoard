@@ -10,8 +10,8 @@ public class Circle extends Drawable{
     }
 
     public void drawOn(DrawingBoard db) {
-        for (int j = xcoor - 2*r; j <= xcoor + 2*r; j++)
-            for (int i = ycoor - 2*r; i <= ycoor + 2*r; i++)
+        for (int j = xcoor - r/2; j <= xcoor + r/2; j++)
+            for (int i = ycoor - r/2; i <= ycoor + r/2; i++)
                 if (distance(j ,i , xcoor, ycoor) <= r/2)
                 db.getImageArray()[i][j] = col;
     }
